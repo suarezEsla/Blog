@@ -10,6 +10,8 @@ if(isset($_POST)){
 
     $usuario = $_SESSION['usuario']['id'];
 
+
+
 //Array de errores
 $errores = array();
 
@@ -20,12 +22,12 @@ if(empty($titulo) ){
 
 
 if(empty($descripcion) ){
-    $errores['descripcion'] = "ERROR.La categoría está mal"; 
+    $errores['descripcion'] = "ERROR.La descripción está mal"; 
 }
 
 
 if(empty($categoria) && !is_numeric(($categoria))){
-    $errores['categoria'] = "La categoría está mal";
+    $errores['categoria'] = "ERROR.La categoría está mal";
 }
 
 
@@ -33,12 +35,15 @@ if (count($errores) == 0){
     $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE(),'ninja');";
 
     $guardar = mysqli_query($db, $sql);
+
+   
     
 }else{
-    $_SESSION['errores_entradas'] = $errores;
+    $_SESSION['errores_entrada'] = $errores;
+   
 }
 }
+header('Location: crear-entrada.php');
 
-header('Location: index.php');
 
 ?>

@@ -1,342 +1,408 @@
-/*Importación de fuentes*/
-
-@font-face {
-    font-family: "fajala";
-    src: url(../fonts/fuente.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Minecraft.ttf";
-    src: url(../fonts/Minecraft.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/*Estilos generales*/
-
-
-/*Limpiar márgenes y padding*/
-
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif, Helvetica, Arial;
-    text-decoration: none;
-}
-
-
-/*Clearfix (IMPORTANTE), LIMPIAR LOS FLOTADOS*/
-
-.clearfix {
-    clear: both;
-    float: none;
-}
-
-
-/*Imágen de fondo*/
-
-body {
-    background: url(../img/cubes.png) #f4f4f4;
-}
-
-.alerta {
-    padding: 5px;
-    font-size: 14px;
-    color: white;
-    background: rgb(99, 177, 99);
-    box-shadow: 0px 1px 3px #ccc;
-    margin-bottom: 15px;
-    border-radius: 2px;
-}
-
-.alerta-error {
-    padding: 5px;
-    font-size: 14px;
-    color: white;
-    background: rgb(221, 94, 94);
-    box-shadow: 0px 1px 3px #ccc;
-    margin-bottom: 15px;
-    border-radius: 2px;
-}
-
-
-/*Cabecera*/
-
-#cabecera {
-    width: 85%;
-    height: auto;
-    background: transparent;
-    margin: 0px auto;
-    /*border: 1px solid black;*/
-}
-
-
-/*Logo*/
-
-#logo {
-    float: left;
-    width: 540px;
-    height: 110px;
-}
-
-
-/*Logo*/
-
-#logo a {
-    font-family: 'Minecraft.ttf', 'helvetica';
-    font-size: 40px;
-    letter-spacing: 2px;
-    color: #cbdd27;
-    text-shadow: 0px 0px 0px black, 1px 2px 2px black, 2px 2px 0px black;
-    transition: all 500ms;
-    line-height: 90px;
-    margin-left: 10px;
-}
-
-#logo a:hover {
-    cursor: pointer;
-    text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px -2px 0px black;
-}
-
-
-/*Menú*/
-
-#menu {
-    clear: both;
-    width: 100%;
-    height: 45px;
-    background: linear-gradient(to bottom, #f9f9f9 0px, #e9e9e9 100%);
-    border: 1px solid #c9c9c9;
-    border-radius: 8px;
-    box-shadow: 0px 1px 1px #ccc;
-    overflow: hidden;
-}
-
-#menu ul {
-    list-style: none;
-}
-
-#menu ul li {
-    /*Para que se floten los elementos del menú uno al lado del otro*/
-    float: left;
-    /*Centrar los elementos dentro del menú*/
-    line-height: 44px;
-    border-right: 1px solid #d6d6d6;
-}
-
-#menu ul li a {
-    display: block;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 15px;
-    color: rgb(68, 63, 63);
-}
-
-#menu ul li a:hover {
-    background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);
-}
-
-
-/*Contenido*/
-
-#container {
-    width: 85%;
-    /* min-height: auto; */
-    height: auto;
-    margin: 0px auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-
-/**Barra lateral**/
-
-#sidebar {
-    float: right;
-    width: 27%;
-    height: auto;
-}
-
-
-/*Parte central*/
-
-#principal {
-    float: left;
-    width: 65%;
-    min-height: 550px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 50px #ccc;
-    margin-left: 20px;
-    overflow: hidden;
-    padding: 20px;
-}
-
-#principal a {
-    color: #333;
-}
-
-#principal h1 {
-    font-size: 32px;
-    color: #444;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px #ccc;
-    font-family: 'fajala';
-}
-
-#principal h2 {
-    font-size: 20px;
-    /* color: #32aed1; */
-    color: #bb5bef;
-    letter-spacing: 1px;
-    margin-top: 25px;
-    text-shadow: 0px 0px 0px #eee, -1px -1px 0px #eee, -2px -2px 0px #eee;
-    font-family: 'fajala';
-}
-
-#principal h2:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
-    background-color: #cbdd27;
-    color: black;
-    transition: 0.5s;
-}
-
-#principal p {
-    margin-top: 8px;
-}
-
-#form-categoria {
-    display: block;
-    width: 30%;
-    margin: 0px auto;
-    margin-bottom: 35px;
-    background: white;
-    padding: 15px;
-}
-
-.imagen {
-    border: solid #333 2px;
-    border-radius: 3%;
-    clear: both;
-    overflow: hidden;
-    box-shadow: 0px 1px 3px rgb(51, 49, 49);
-    padding: 2px;
-}
-
-.fecha {
-    color: #4e4e4e;
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-#ver-todas a {
-    display: block;
-    border-radius: 2px;
-    padding: 15px;
-    color: white;
-    background-color: #7bb8f1;
-    border: 1px solid #156784;
-    cursor: pointer;
-    width: 160px;
-    margin: 0px auto;
-    margin-top: 40px;
-}
-
-#ver-todas a:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
-}
-
-
-/*Formularios*/
-
-.block-aside {
-    display: block;
-    width: 90%;
-    margin: 0px auto;
-    margin-bottom: 35px;
-    background: white;
-    padding: 15px;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.3), 0px 0px 1px #FFFFFF inset, 0px -3px 2px rgba(0, 0, 0, 0.25) inset;
-}
-
-label,
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    display: block;
-    width: 95%;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-input[type="button"],
-input[type="submit"],
-{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-input[type="button"],
-input[type="submit"]:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
-}
-
-.block-aside h3 {
-    margin-bottom: 15px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-input[type="button"],
-input[type="submit"],
-.boton {
-    display: block;
-    color: white;
-    background-color: #7bb8f1;
-    border: 1px solid #156784;
-    cursor: pointer;
-    margin: 0px auto;
-    padding: 8px;
-}
-
-.boton {
-    width: 130px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-.boton:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
-    background-color: #cbdd27;
-    color: black;
-    transition: 0.5s;
-}
-
-
-/*Pie*/
-
-#pie {
-    width: 83%;
-    clear: both;
-    margin: 0 auto;
-    background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);
-    border: 1px solid #c9c9c9;
-    border-bottom: none;
-    border-radius: 8px 8px 0px 0px;
-    color: #666;
-    height: auto;
-    padding: 15px;
-    text-align: center;
-}
+                                                            /*Importación de fuentes*/
+                                                            
+                                                            @font-face {
+                                                                font-family: "fajala";
+                                                                src: url(../fonts/fuente.ttf) format('truetype');
+                                                                font-weight: normal;
+                                                                font-style: normal;
+                                                            }
+                                                            
+                                                            @font-face {
+                                                                font-family: "Minecraft.ttf";
+                                                                src: url(../fonts/Minecraft.ttf) format('truetype');
+                                                                font-weight: normal;
+                                                                font-style: normal;
+                                                            }
+                                                            
+                                                            @font-face {
+                                                                font-family: "Raleway.ttf";
+                                                                src: url(../fonts/Raleway.ttf) format('truetype');
+                                                                font-weight: normal;
+                                                                font-style: normal;
+                                                            }
+                                                            /*Estilos generales*/
+                                                            /*Limpiar márgenes y padding*/
+                                                            
+                                                            * {
+                                                                margin: 0px;
+                                                                padding: 0px;
+                                                                font-family: sans-serif, Helvetica, Arial;
+                                                                text-decoration: none;
+                                                            }
+                                                            /*Clearfix (IMPORTANTE), LIMPIAR LOS FLOTADOS*/
+                                                            
+                                                            .clearfix {
+                                                                clear: both;
+                                                                float: none;
+                                                            }
+                                                            /*Imágen de fondo*/
+                                                            
+                                                            body {
+                                                                background: url(../img/cubes.png) #f4f4f4;
+                                                            }
+                                                            
+                                                            .alerta {
+                                                                padding: 5px;
+                                                                font-size: 14px;
+                                                                color: white;
+                                                                background: rgb(99, 177, 99);
+                                                                box-shadow: 0px 1px 3px #ccc;
+                                                                margin-bottom: 15px;
+                                                                border-radius: 2px;
+                                                            }
+                                                            
+                                                            .alerta-error {
+                                                                padding: 5px;
+                                                                font-size: 14px;
+                                                                color: white;
+                                                                background: rgb(221, 94, 94);
+                                                                box-shadow: 0px 1px 3px #ccc;
+                                                                margin-bottom: 15px;
+                                                                border-radius: 2px;
+                                                            }
+                                                            /*Cabecera*/
+                                                            
+                                                            #cabecera {
+                                                                width: 85%;
+                                                                height: auto;
+                                                                background: transparent;
+                                                                margin: 0px auto;
+                                                                /*border: 1px solid black;*/
+                                                            }
+                                                            /*Logo*/
+                                                            
+                                                            #logo {
+                                                                float: left;
+                                                                width: 540px;
+                                                                height: 110px;
+                                                            }
+                                                            /*Logo*/
+                                                            
+                                                            #logo a {
+                                                                font-family: 'Minecraft.ttf', 'helvetica';
+                                                                font-size: 40px;
+                                                                letter-spacing: 2px;
+                                                                color: #cbdd27;
+                                                                text-shadow: 0px 0px 0px black, 1px 2px 2px black, 2px 2px 0px black;
+                                                                transition: all 500ms;
+                                                                line-height: 90px;
+                                                                margin-left: 10px;
+                                                            }
+                                                            
+                                                            #logo a:hover {
+                                                                cursor: pointer;
+                                                                text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px -2px 0px black;
+                                                            }
+                                                            /*Menú*/
+                                                            
+                                                            #menu {
+                                                                clear: both;
+                                                                width: 100%;
+                                                                height: 45px;
+                                                                background: linear-gradient(to bottom, #f9f9f9 0px, #e9e9e9 100%);
+                                                                border: 1px solid #c9c9c9;
+                                                                border-radius: 8px;
+                                                                box-shadow: 0px 1px 1px #ccc;
+                                                                overflow: hidden;
+                                                            }
+                                                            
+                                                            #menu ul {
+                                                                list-style: none;
+                                                            }
+                                                            
+                                                            #menu ul li {
+                                                                /*Para que se floten los elementos del menú uno al lado del otro*/
+                                                                float: left;
+                                                                /*Centrar los elementos dentro del menú*/
+                                                                line-height: 44px;
+                                                                border-right: 1px solid #d6d6d6;
+                                                            }
+                                                            
+                                                            #menu ul li a {
+                                                                display: block;
+                                                                padding-left: 10px;
+                                                                padding-right: 10px;
+                                                                font-size: 15px;
+                                                                color: rgb(68, 63, 63);
+                                                            }
+                                                            
+                                                            #menu ul li a:hover {
+                                                                background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);
+                                                            }
+                                                            /*Contenido*/
+                                                            
+                                                            #container {
+                                                                width: 85%;
+                                                                /* min-height: auto; */
+                                                                height: auto;
+                                                                margin: 0px auto;
+                                                                margin-top: 30px;
+                                                                margin-bottom: 30px;
+                                                            }
+                                                            /**Barra lateral**/
+                                                            
+                                                            #sidebar {
+                                                                float: right;
+                                                                width: 27%;
+                                                                height: auto;
+                                                            }
+                                                            /*Parte central*/
+                                                            
+                                                            #principal {
+                                                                float: left;
+                                                                width: 65%;
+                                                                min-height: 550px;
+                                                                background: white;
+                                                                border-radius: 5px;
+                                                                box-shadow: 0px 0px 50px #ccc;
+                                                                margin-left: 20px;
+                                                                overflow: hidden;
+                                                                padding: 20px;
+                                                            }
+                                                            /* #principal a {
+                                                                color: #fff;
+                                                            } */
+                                                            
+                                                            #principal a:hover {
+                                                                cursor: pointer;
+                                                                text-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                                color: rgba(34, 7, 21, 0.5);
+                                                                transition: 1s;
+                                                            }
+                                                            
+                                                            #principal h1 {
+                                                                font-size: 32px;
+                                                                color: #444;
+                                                                letter-spacing: 1px;
+                                                                text-shadow: 1px 1px 2px #ccc;
+                                                                font-family: 'fajala';
+                                                            }
+                                                            
+                                                            #principal h2 {
+                                                                /* color: #32aed1; */
+                                                                /* color: rgba(255, 0, 130, 0.5); */
+                                                                color: rgba(126, 9, 69, 0.5);
+                                                                font-size: 30px;
+                                                                text-shadow: 0 2px 25px rgba(34, 7, 21, 0.5);
+                                                                letter-spacing: 1px;
+                                                                margin-top: 25px;
+                                                                text-shadow: 0px 0px 0px #eee, -1px -1px 0px #eee, -2px -2px 0px #eee;
+                                                                font-family: 'fajala';
+                                                            }
+                                                            
+                                                            #principal h2:hover {
+                                                                cursor: pointer;
+                                                                font-size: 25px;
+                                                                text-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                                color: rgba(34, 7, 21, 0.5);
+                                                                transition: 1s;
+                                                            }
+                                                            
+                                                            #principal p {
+                                                                margin-top: 8px;
+                                                            }
+                                                            
+                                                            #form-categoria {
+                                                                display: block;
+                                                                width: 30%;
+                                                                margin: 0px auto;
+                                                                margin-bottom: 35px;
+                                                                background: white;
+                                                                padding: 15px;
+                                                            }
+                                                            
+                                                            .imagen {
+                                                                border: solid #333 2px;
+                                                                border-radius: 3%;
+                                                                clear: both;
+                                                                overflow: hidden;
+                                                                box-shadow: 0px 1px 3px rgb(51, 49, 49);
+                                                                padding: 2px;
+                                                            }
+                                                            
+                                                            .fecha {
+                                                                color: #4e4e4e;
+                                                                margin-top: 5px;
+                                                                font-size: 14px;
+                                                            }
+                                                            /*  #ver-todas a {
+                                                                display: block;
+                                                                border-radius: 2px;
+                                                                padding: 15px;
+                                                                color: white;
+                                                                background-color: #7bb8f1;
+                                                                border: 1px solid #156784;
+                                                                cursor: pointer;
+                                                                width: 160px;
+                                                                margin: 0px auto;
+                                                                margin-top: 40px;
+                                                            }
+
+                                                        
+                                                            
+                                                            #ver-todas a:hover {
+                                                                cursor: pointer;
+                                                                box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                            } */
+                                                            /*Formularios*/
+                                                            
+                                                            .card-title {
+                                                                color: rgba(126, 9, 69, 0.5);
+                                                                font-size: 30px;
+                                                                text-shadow: 0 2px 25px rgba(34, 7, 21, 0.5);
+                                                            }
+                                                            /* .card-title:hover {
+                                                                cursor: pointer;
+                                                                font-size: 25px;
+                                                                text-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                                color: rgba(34, 7, 21, 0.5);
+                                                                transition: 1s;
+                                                            } */
+                                                            
+                                                            #ver-todas a {
+                                                                color: #fff;
+                                                            }
+                                                            
+                                                            #ver-todas a:hover {
+                                                                cursor: pointer;
+                                                                box-shadow: 0 2px 25px rgba(34, 7, 21, 0.5);
+                                                                color: rgba(0, 0, 0, 0.5);
+                                                                transform: 0.3s;
+                                                            }
+                                                            
+                                                            .block-aside {
+                                                                display: block;
+                                                                width: 90%;
+                                                                margin: 0px auto;
+                                                                margin-bottom: 35px;
+                                                                background: white;
+                                                                padding: 15px;
+                                                                box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.3), 0px 0px 1px #FFFFFF inset, 0px -3px 2px rgba(0, 0, 0, 0.25) inset;
+                                                            }
+                                                            /*Botones */
+                                                            
+                                                            label,
+                                                            input[type="text"],
+                                                            input[type="email"],
+                                                            input[type="password"] {
+                                                                display: block;
+                                                                width: 95%;
+                                                                margin-top: 2px;
+                                                                margin-bottom: 2px;
+                                                            }
+                                                            /* input[type="button"],
+                                                            input[type="submit"],
+                                                            {
+                                                                margin-top: 5px;
+                                                                margin-bottom: 5px;
+                                                            } */
+                                                            /* input[type="button"],
+                                                            input[type="submit"]:hover {
+                                                                cursor: pointer;
+                                                                box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                            } */
+                                                            
+                                                            .block-aside h3 {
+                                                                margin-bottom: 15px;
+                                                            }
+                                                            
+                                                            input[type="text"],
+                                                            input[type="email"],
+                                                            input[type="password"] {
+                                                                padding: 5px;
+                                                                margin-bottom: 10px;
+                                                            }
+                                                            /* input[type="button"],
+                                                            input[type="submit"],
+                                                            .boton {
+                                                                display: block;
+                                                                color: white;
+                                                                background-color: #7bb8f1;
+                                                                border: 1px solid #156784;
+                                                                cursor: pointer;
+                                                                margin: 0px auto;
+                                                                padding: 8px;
+                                                            } */
+                                                            
+                                                            .boton {
+                                                                width: 130px;
+                                                                margin-top: 5px;
+                                                                text-align: center;
+                                                            }
+                                                            
+                                                            .boton:hover {
+                                                                cursor: pointer;
+                                                                box-shadow: 0px 0px 0px #ccc, -1px -1px 0px #ccc, -2px -2px 0px #ccc;
+                                                                background-color: #cbdd27;
+                                                                color: black;
+                                                                transition: 0.5s;
+                                                            }
+                                                            
+                                                            .bubbly-button {
+                                                                text-align: center;
+                                                                width: 130px;
+                                                                font-family: 'Raleway.ttf', 'Arial', sans-serif;
+                                                                display: block;
+                                                                font-size: 1em;
+                                                                padding: 1em 2em;
+                                                                margin: 0% auto;
+                                                                margin-top: 25px;
+                                                                margin-bottom: 25px;
+                                                                -webkit-appearance: none;
+                                                                appearance: none;
+                                                                /* background-color: rgba(255, 0, 130, 0.5); */
+                                                                background-color: rgb(205 62 135 / 50%);
+                                                                color: #fff;
+                                                                border-radius: 4px;
+                                                                border: none;
+                                                                cursor: pointer;
+                                                                position: relative;
+                                                                transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+                                                                box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+                                                            }
+                                                            
+                                                            .bubbly-button:hover {
+                                                                cursor: pointer;
+                                                                box-shadow: 0 2px 25px rgba(34, 7, 21, 0.5);
+                                                                color: rgba(0, 0, 0, 0.5);
+                                                                transform: 0.3s;
+                                                                text-decoration: none;
+                                                            }
+                                                            /*Pie*/
+                                                            
+                                                            #pie {
+                                                                width: 83%;
+                                                                clear: both;
+                                                                margin: 0 auto;
+                                                                background: linear-gradient(to bottom, #f2f2f2 0px, #dad9d4 100%);
+                                                                border: 1px solid #c9c9c9;
+                                                                border-bottom: none;
+                                                                border-radius: 8px 8px 0px 0px;
+                                                                color: #666;
+                                                                height: auto;
+                                                                padding: 15px;
+                                                                text-align: center;
+                                                            }
+                                                            /*TARJETAS*/
+                                                            
+                                                            .card {
+                                                                text-align: center;
+                                                                display: inline-block;
+                                                                margin-top: 10px;
+                                                                margin-bottom: 10px;
+                                                            }
+                                                            
+                                                            .card a {
+                                                                color: rgba(126, 9, 69, 0.5);
+                                                                font-size: 20px;
+                                                                text-shadow: 0 2px 25px rgba(34, 7, 21, 0.5);
+                                                                text-decoration: none;
+                                                            }
+                                                            
+                                                            .card a:hover {
+                                                                cursor: pointer;
+                                                                text-shadow: 0 25px 25px rgba(126, 9, 69, 0.5);
+                                                                color: rgba(0, 0, 0, 0.5);
+                                                                transition: 0.3s;
+                                                                text-decoration: none;
+                                                            }

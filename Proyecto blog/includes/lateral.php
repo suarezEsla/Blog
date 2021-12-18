@@ -15,11 +15,11 @@ guardado en la sesión (únicamente los índices nombre y apellido)-->
     <div id="usuario-logueado" class="block-aside">
 <h3>Bienvenido/a, <?= $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'] ;  ?></h3>
 <!--Botón para cerrar la sesión en caso de que el usuario esté logueado-->
-<a class="boton" href="crear-entrada.php">Crear Entrada</a>
-<a class="boton" href="crear-categoria.php">Crear Categoría</a>
-<a class="boton" href="cerrar.php">Crear Categoría</a>
-<a class="boton" href="cerrar.php">Mis Datos</a>
-<a class="boton" href="cerrar.php">Cerrar Sesión</a>
+<a class="bubbly-button " href="crear-entrada.php">Crear Entrada</a>
+<a class="bubbly-button " href="crear-categoria.php">Crear Categoría</a>
+<a class="bubbly-button " href="cerrar.php">Crear Categoría</a>
+<a class="bubbly-button " href="mis-datos.php">Mis Datos</a>
+<a class="bubbly-button " href="cerrar.php">Cerrar Sesión</a>
     </div>
 <?php endif; ?>
 
@@ -46,8 +46,9 @@ guardado en la sesión (únicamente los índices nombre y apellido)-->
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password">
 
-                    <input type="submit" name="submit" value="Entrar">
+                    <input class="bubbly-button" type="submit" name="submit" value="Entrar">
                 </form>
+                
             </div>
 
             <div id="register" class="block-aside">
@@ -64,7 +65,7 @@ guardado en la sesión (únicamente los índices nombre y apellido)-->
                  <?= $_SESSION['completado']?>
                  </div>
 
-               <?PHP elseif(isset($_SESSION['errores']['general'])): ?>
+               <?php elseif(isset($_SESSION['errores']['general'])): ?>
                 <div class="alerta alerta-error">     
                  <?= $_SESSION['errores']= "Error en registro";?>
                  </div>
@@ -125,7 +126,7 @@ if(isset($_SESSION['errores'])){
                     <input type="password" name="password" id="password">
 
         
-                    <input type="submit" name="submit" value="Registrarse">
+                    <input class="bubbly-button" type="submit" name="submit" value="Registrarse">
                 </form>
 
                 <?php

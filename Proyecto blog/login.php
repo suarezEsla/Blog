@@ -9,7 +9,7 @@ if(isset($_POST)){
 
 //Si existiera la sesión de error se destruye porque ya se habría solventado
 if(isset($_SESSION['error_login'])){
-    session_unset($_SESSION['error_login']);
+    session_unset();
 }
 
 //Recoger datos del formulario
@@ -61,6 +61,7 @@ $_SESSION['error_login'] = 'Login incorrecto.';
 
 $_SESSION['error_login'] = 'Login incorrecto.';
 }
+
 }
 
 header('Location: index.php');

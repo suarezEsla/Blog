@@ -8,12 +8,8 @@ if(isset($_POST)){
 $errores = array();
 
 //Validación de nombre
-if(!empty($nombre) && !is_numeric($nombre) ){
-    $nombre_validado = true;
-}else{
-    $nombre_validado = false;
+if(empty($nombre) && !is_numeric($nombre) ){
     $errores['nombre'] = "ERROR.El nombre no es válido";
-   
 }
 if (count($errores) == 0){
     $sql = "INSERT INTO categorias VALUES (null, '$nombre')";
@@ -21,6 +17,8 @@ if (count($errores) == 0){
     $guardar = mysqli_query($db, $sql);
 
   
+}else{
+    $_SESSION['errores_categoria'] = $errores;
 }
 }
 
